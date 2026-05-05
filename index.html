@@ -1,104 +1,121 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="google-site-verification" content="s8RU9vR6DmYOGsBD5gyHZ7JM_ceaommIzqW-xyRTjYc" />
-  <title>GET ESPORTS Download</title>
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial;
-      background: linear-gradient(180deg,#020617,#0f172a);
-      color: white;
-      text-align: center;
-    }
+<title>GET ESPORTS Download</title>
 
-    .box {
-      padding: 40px 20px;
-    }
+<meta name="google-site-verification" content="s8RU9vR6DmYOGsBD5gyHZ7JM_ceaommIzqW-xyRTjYc" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    img {
-      width: 110px;
-      border-radius: 20px;
-      box-shadow: 0 0 30px #3b82f6;
-    }
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(180deg,#020617,#0f172a);
+color:white;
+text-align:center;
+}
 
-    h1 {
-      margin-top: 15px;
-    }
+.box{
+padding:40px 20px;
+}
 
-    p {
-      color: #94a3b8;
-    }
+img{
+width:110px;
+border-radius:20px;
+box-shadow:0 0 30px #3b82f6;
+}
 
-    .btn {
-      margin-top: 25px;
-      padding: 15px 35px;
-      background: #3b82f6;
-      color: white;
-      border-radius: 12px;
-      text-decoration: none;
-      font-size: 18px;
-      display: inline-block;
-      box-shadow: 0 0 20px #3b82f6;
-    }
+h1{
+margin-top:15px;
+}
 
-    .info {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(2,1fr);
-      gap: 15px;
-    }
+p{
+color:#94a3b8;
+}
 
-    .card {
-      background: #1e293b;
-      padding: 20px;
-      border-radius: 15px;
-    }
+.btn{
+margin-top:25px;
+padding:15px 35px;
+background:#3b82f6;
+color:white;
+border-radius:12px;
+text-decoration:none;
+font-size:18px;
+display:inline-block;
+box-shadow:0 0 20px #3b82f6;
+}
 
-    .small {
-      font-size: 13px;
-      color: #94a3b8;
-    }
-  </style>
+.info{
+margin-top:40px;
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:0 20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+}
+
+.small{
+font-size:13px;
+color:#94a3b8;
+}
+</style>
 </head>
 
 <body>
 
 <div class="box">
+<img src="https://i.ibb.co.com/bgZc18y6/IMG-20260402.jpg">
 
-  <img src="https://i.ibb.co.com/bgZc18y6/IMG-2026042.jpg">
+<h1>🎮 GET ESPORTS</h1>
+<p>Play Tournament & Earn Rewards</p>
 
-  <h1>🎮 GET ESPORTS</h1>
-  <p>Play Tournament & Earn Rewards</p>
-
-  <a class="btn" href="https://github.com/deepbarmon2026-sys/getesports-app/raw/main/getesports.apk">
-    📥 Download App
-  </a>
-
-  <div class="info">
-    <div class="card">
-      <h3>30K+</h3>
-      <p class="small">Downloads</p>
-    </div>
-
-    <div class="card">
-      <h3>10K+</h3>
-      <p class="small">Players</p>
-    </div>
-
-    <div class="card">
-      <h3>24/7</h3>
-      <p class="small">Support</p>
-    </div>
-
-    <div class="card">
-      <h3>Fast</h3>
-      <p class="small">Secure Payment</p>
-    </div>
-  </div>
+<a class="btn" href="#" onclick="downloadApp()">📦 Download App</a>
 
 </div>
+
+<div class="info">
+
+<div class="card">
+<h3 id="downloadCount">Loading...</h3>
+<p class="small">Downloads</p>
+</div>
+
+<div class="card">
+<h3>Live</h3>
+<p class="small">Users</p>
+</div>
+
+<div class="card">
+<h3>24/7</h3>
+<p class="small">Support</p>
+</div>
+
+<div class="card">
+<h3>Fast</h3>
+<p class="small">Secure</p>
+</div>
+
+</div>
+
+<script>
+// Download function + counter increase
+function downloadApp(){
+fetch("https://api.countapi.xyz/hit/getesports/downloads");
+window.location.href="https://github.com/deepbarmon2026-sys/getesports-app/raw/main/getesports.apk";
+}
+
+// Load counter
+fetch("https://api.countapi.xyz/get/getesports/downloads")
+.then(res=>res.json())
+.then(data=>{
+document.getElementById("downloadCount").innerText=data.value;
+});
+</script>
 
 </body>
 </html>
